@@ -333,7 +333,7 @@ main > .section:first-of-type {
   }
 }
 
-/* section metadata */
+/* section metadata - updated */
 main .section.light,
 main .section.highlight {
   background-color: bisque;
