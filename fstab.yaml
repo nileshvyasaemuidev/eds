@@ -1,2 +1,3 @@
 mountpoints:
-/: https://drive.google.com/drive/u/4/folders/1LjueeVKazcdUoIZFJi2gfbAUgxz1kvox
+  /:
+    giturl: https://github.com/nileshvyasaemuidev/eds.git
