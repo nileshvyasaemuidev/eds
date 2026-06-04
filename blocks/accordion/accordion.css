@@ -1,0 +1,22 @@
+.accordion-item {
+     border-bottom: 1px solid #ddd;
+}
+
+.accordion-title {
+     width: 100%;
+     padding: 16px;
+     text-align: left;
+     font-size: 16px;
+     cursor: pointer;
+     border: none;
+     background: none;
+}
+
+.accordion-content {
+     display: none;
+     padding: 16px;
+}
+
+.accordion-item.open .accordion-content {
+     display: block;
+}
