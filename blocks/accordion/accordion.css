@@ -1,0 +1,38 @@
+.accordion-item {
+     border-bottom: 1px solid #ddd;
+}
+
+.accordion-title {
+     width: 100%;
+     padding: 1rem;
+     border: 0;
+     background: none;
+     text-align: left;
+     font-size: 1rem;
+     cursor: pointer;
+     position: relative;
+}
+
+/* Plus / Minus icon */
+.accordion-title::after {
+     content: '+';
+     position: absolute;
+     right: 16px;
+     top: 50%;
+     margin-top: -8px;
+     transition: transform 0.3s ease;
+}
+
+.accordion-item.open .accordion-title::after {
+     content: '−';
+}
+
+.accordion-content {
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.35s ease;
+}
+
+.accordion-content-inner {
+     padding: 0 1rem 1rem;
+}
