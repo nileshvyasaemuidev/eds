@@ -1,0 +1,24 @@
+.country {
+  max-width: 100%;
+}
+
+.country .continent-filter {
+  min-width: 250px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+
+.country .country-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.country th,
+.country td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.country th {
+  text-align: left;
+}
