@@ -340,3 +340,7 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.default-content-wrapper h3 {
+  margin-bottom: 20px;
+}

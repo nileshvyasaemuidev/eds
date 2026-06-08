@@ -12,17 +12,17 @@
 
 .accordion-title {
      width: 100%;
-     padding: 1rem;
+     padding: 20px;
      border: 0;
      background: none;
      text-align: left;
-     font-size: 1.15rem;
+     font-size: 18px;
      cursor: pointer;
      position: relative;
      background-color: #f2f2f2;
 }
 
-.accordion-title p{
+.accordion-title p {
      padding: 0;
      margin: 0;
 }
@@ -42,6 +42,11 @@
      content: '−';
 }
 
+.accordion-item.open .accordion-title {
+     background-color: #1473e6;
+     color: #fff;
+}
+
 .accordion-content {
      max-height: 0;
      overflow: hidden;
@@ -49,6 +54,6 @@
 }
 
 .accordion-content-inner {
-     font-size: 1rem;
-     padding: 0 1rem 1rem;
+     font-size: 16px;
+     padding: 8px 20px 20px;
 }
