@@ -1,0 +1,71 @@
+.tabs .tabs-wrapper {
+     display: flex;
+     flex-direction: column;
+}
+
+.tabs .tabs-nav {
+     display: flex;
+     gap: 0.5rem;
+     margin-bottom: 0;
+}
+
+.tabs .tab-button {
+     border: none;
+     background: #f2f2f2;
+     padding: 12px 20px;
+     cursor: pointer;
+     font-size: 18px;
+     border-radius: 4px 4px 0 0;
+     transition: all 0.2s ease;
+}
+
+.tabs .tab-button p {
+     margin: 0;
+     padding: 0;
+}
+
+.tabs .tab-button:hover {
+     background: #e9e9e9;
+}
+
+.tabs .tab-button.active {
+     background: #1473e6;
+     color: #fff;
+}
+
+.tabs .tab-panel {
+     font-size: 16px;
+     opacity: 0;
+     visibility: hidden;
+     height: 0;
+     overflow: hidden;
+     transition: opacity 0.3s ease;
+}
+
+.tabs .tab-panel.active {
+     opacity: 1;
+     visibility: visible;
+     height: auto;
+}
+
+.tabs-panels {
+     border: 1px solid #ddd;
+     padding: 8px 20px 20px;
+     border-radius: 0 4px 4px;
+}
+
+.tabs.vertical .tabs-wrapper {
+     display: flex;
+     flex-direction: row;
+     gap: 2rem;
+}
+
+.tabs.vertical .tabs-nav {
+     flex-direction: column;
+     min-width: 220px;
+     margin-bottom: 0;
+}
+
+.tabs.vertical .tabs-panels {
+     flex: 1;
+}
