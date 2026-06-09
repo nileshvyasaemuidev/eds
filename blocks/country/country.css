@@ -1,24 +1,79 @@
 .country {
   max-width: 100%;
+  font-size: 16px;
+}
+
+.country-count {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.country-count span {
+  font-weight: 700;
+  color: #0073e6;
 }
 
 .country .continent-filter {
   min-width: 250px;
   padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
   margin-bottom: 24px;
 }
 
-.country .country-table {
+.country-table-wrapper {
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.country-table {
+  width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
 .country th,
 .country td {
-  padding: 12px;
+  padding: 8px;
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
   border: 1px solid #ddd;
 }
 
 .country th {
   text-align: left;
+  background-color: #f4f4f4;
+}
+
+.country th:first-child,
+.country td:first-child,
+.country th:last-child,
+.country td:last-child {
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  text-align: center;
+}
+
+.country .country-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country .country-flag {
+  width: 32px;
+  flex-shrink: 0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+@media screen and (width <= 767px) {
+    select.continent-filter {
+        width: 100%;
+    }
 }
