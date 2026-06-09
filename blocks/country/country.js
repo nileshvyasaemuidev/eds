@@ -10,10 +10,16 @@ export default async function decorate(block) {
   block.innerHTML = '';
 
   const dropdown = document.createElement('select');
+  dropdown.name = 'Filter by continent';
   dropdown.className = 'continent-filter';
 
+  const tableWrapper = document.createElement('div');
   const table = document.createElement('table');
+  tableWrapper.className = 'country-table-wrapper';
   table.className = 'country-table';
+
+  const countLabel = document.createElement('div');
+  countLabel.className = 'country-count';
 
   const continents = ['All', ...new Set(
     countries
@@ -24,7 +30,7 @@ export default async function decorate(block) {
       ),
   )];
 
-  continents.sort();
+  continents.sort((a, b) => a.localeCompare(b));
 
   if (continents.includes('All')) {
     continents.splice(
@@ -47,10 +53,11 @@ export default async function decorate(block) {
     table.innerHTML = `
       <thead>
         <tr>
+          <th>Sr. No</th>
           <th>Country</th>
           <th>Capital</th>
           <th>Continent</th>
-          <th>Abbreviation</th>
+          <th>Abbr.</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -64,17 +71,30 @@ export default async function decorate(block) {
         (country) => country.Continent === selectedContinent,
       );
 
-    filtered.forEach((country) => {
+    countLabel.innerHTML = `      
+        Total Countries: <span>${filtered.length}</span>      
+    `;
+    filtered.forEach((country, index) => {
       const row = document.createElement('tr');
+      const iso2 = country.Abbreviation?.trim().toLowerCase();
 
       row.innerHTML = `
-        <td>${country.Country}</td>
+        <td>${index + 1}</td>
+        <td class="country-name">
+          <div class="country-info">
+            <img
+              class="country-flag"
+              src="https://flagcdn.com/w40/${iso2}.png"
+              alt="${country.Country} flag"
+              loading="lazy"
+            />
+            <span>${country.Country}</span>
+          </div>
+        </td>
         <td>${country.Capital}</td>
         <td>${country.Continent}</td>
         <td>${country.Abbreviation}</td>
-      `;
-
-      tbody.append(row);
+        `; tbody.append(row);
     });
   };
 
@@ -82,8 +102,11 @@ export default async function decorate(block) {
     renderCountries(e.target.value);
   });
 
+  tableWrapper.append(table);
+
   block.append(dropdown);
-  block.append(table);
+  block.append(countLabel);
+  block.append(tableWrapper);
 
   renderCountries('All');
 }
